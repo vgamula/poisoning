@@ -12,7 +12,15 @@ export class App extends Component {
     };
   }
   onInitializeGame(value) {
-    debugger;
+    if (value % 2 !== 1) {
+      alert('Value should be even!');
+      return;
+    }
+    this.setState({
+      gameInitialized: true,
+      n: value,
+      data: generateCells(value)
+    });
   }
   render() {
     return (
