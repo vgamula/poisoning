@@ -28,11 +28,19 @@ class Counter extends Component {
 }
 
 export class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      'gameInitialized': false
+    };
+  }
   render() {
     return (
       <div>
-        <Counter increment={1} color={NICE} />
-        <Counter increment={5} color={SUPER_NICE} />
+        {`Game initialized ---- ${this.state.gameInitialized}`}
+        <button onClick={() => { this.setState({gameInitialized: !this.state.gameInitialized}); }}>
+          Toggle game
+        </button>
       </div>
     );
   }
