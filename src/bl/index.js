@@ -1,7 +1,7 @@
 const infectedCell = {
   ticks: 0,
   injurence: 4,
-  infected: true
+  infected: true,
 }
 
 function range(n) {
@@ -38,6 +38,7 @@ export function generateCells(n) {
       return {
         ...infectedCell,
         injurence: infected ? 4 : 0,
+        canBeInfected: !infected,
         infected,
       };
     });
@@ -57,7 +58,7 @@ export function gameStep(data) {
             console.log('Direction vector is not valid, trying to generate new one more time.')
           }
           let target = data[i + directionVector.i][j + directionVector.j];
-          if (target.ticks <= 6) {
+          if (target.ticks <= 6 && target.canBeInfected) {
             data[i + directionVector.i][j + directionVector.j] = {
               ...infectedCell
             }; 
@@ -70,6 +71,7 @@ export function gameStep(data) {
         if (!cell.injurence) {
           cell.infected = false;
           cell.ticks = 0;
+          cell.canBeInfected = random(1, 4) === 1;
         }
       }
     }

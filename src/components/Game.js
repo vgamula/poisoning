@@ -3,7 +3,18 @@ import {gameStep} from 'bl';
 
 class Cell extends Component {
   render() {
-    return <td>{this.props.data.infected ? 8 : '_'}</td>
+    const isInfected = this.props.data.infected;
+    const isHealing = this.props.data.infected && this.props.data.ticks > 6;
+    let style = {
+      backgroundColor: 'green',
+    };
+    if (isInfected) {
+      style.backgroundColor = 'red';
+    }
+    if (isHealing) {
+      style.backgroundColor = 'blue';
+    }
+    return <td width='10' height='10' style={style}></td>
   }
 }
 
