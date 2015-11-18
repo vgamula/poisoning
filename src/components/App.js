@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+
 import GameInitializer from 'components/GameInitializer';
+import Game from 'components/Game';
+
 import {generateCells} from 'bl';
+
 
 export class App extends Component {
   constructor(props) {
@@ -27,7 +31,7 @@ export class App extends Component {
       <div>
         {this.state.gameInitialized
           ? (
-            <span>Game initialized!</span>
+            <Game data={this.state.data} />
           ) : (
             <GameInitializer onInitializeGame={this.onInitializeGame} />
           )}

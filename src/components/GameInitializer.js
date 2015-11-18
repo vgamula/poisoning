@@ -19,7 +19,7 @@ export default class extends Component {
   render() {
     return (
       <div>
-        <input ref='n' type='number' />
+        <input ref='n' type='number' defaultValue={15} />
         <button onClick={this.initializeGame}>
           Start
         </button>
