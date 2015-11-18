@@ -11,6 +11,9 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/static/'
   },
+  resolve: {
+    root: path.join(__dirname, 'src')
+  },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
