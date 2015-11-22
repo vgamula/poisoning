@@ -33,16 +33,24 @@ export default class extends Component {
     };
   }
   render() {
+    let sterStyle = {
+        'font-size': 16 + 'px',
+        'text-align': 'center',
+        'border': 1 + 'px solid #E81515',
+        'borderRadius': 5 + 'px',
+        'background-color': '#CBF3C4',
+        'padding': 20 + 'px',
+    }
     return (
       <div>
+        <p style={sterStyle}>
+          {`Step ${this.state.step}`}
+        </p>
         <table>
           <tbody>
             {this.state.data.map((x, i) => <Row data={x} key={i} />)}
           </tbody>
         </table>
-        <p>
-          {`Step ${this.state.step}`}
-        </p>
       </div>
     );
   }

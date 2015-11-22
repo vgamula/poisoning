@@ -27,8 +27,11 @@ export class App extends Component {
     });
   }
   render() {
+    let pStyle = {
+        fontFamily: 'Raleway',
+    }
     return (
-      <div>
+      <div style={pStyle}>
         {this.state.gameInitialized
           ? (
             <Game data={this.state.data} />
