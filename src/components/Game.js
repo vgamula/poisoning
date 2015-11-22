@@ -40,13 +40,16 @@ export default class extends Component {
         'borderRadius': 5 + 'px',
         'background-color': '#CBF3C4',
         'padding': 20 + 'px',
+    };
+    let tableStyle = {
+        'margin': 0 + ' auto',
     }
     return (
       <div>
         <p style={sterStyle}>
           {`Step ${this.state.step}`}
         </p>
-        <table>
+        <table style={tableStyle}>
           <tbody>
             {this.state.data.map((x, i) => <Row data={x} key={i} />)}
           </tbody>
