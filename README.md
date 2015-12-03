@@ -1,5 +1,4 @@
 Poisoning
-=====================
 
 ## Installation & Running
 
