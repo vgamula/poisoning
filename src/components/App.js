@@ -20,6 +20,10 @@ export class App extends Component {
       alert('Value should be even!');
       return;
     }
+    if (value>40){
+    	alert('value shuld be less than 40')
+    	return;
+    }
     this.setState({
       gameInitialized: true,
       n: value,
